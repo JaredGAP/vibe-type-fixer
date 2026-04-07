@@ -34,3 +34,7 @@ To ensure your types are correct and haven't broken the build, you MUST proactiv
 - **External Libraries:** If the `any` originates from an untyped external dependency, consider creating an ambient module declaration (`declare module '...'`) or checking if `@types/package` should be installed.
 - **Generics:** Use Generics `<T>` if a function is a utility designed to handle multiple types dynamically, rather than hardcoding a single, restrictive interface.
 - **JSDoc Conversion:** If replacing `any` in a JSDoc-typed JavaScript file, convert it to standard JSDoc `@param {MyType}` syntax instead of TypeScript interfaces.
+
+## Post-Cleanup Actions (Required)
+1. **Git Commit:** If working in a Git repository, offer to commit the changes. Use a clear, conventional commit message like `refactor(types): replace 'any' types with strict interfaces in [file/module]`.
+2. **Summary Report:** Provide a brief summary to the user detailing the new interfaces created, how many `any` types were removed, and confirming that the TypeScript compiler (`tsc`) passed without errors.
